@@ -6,26 +6,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #fefefe;
-            font-family: 'Roboto', sans-serif;
-            color: #333333;
-        }
+        @media (max-width: 768px) {
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #fefefe;
+                font-family: 'Roboto', sans-serif;
+                color: #333333;
+            }
 
-        #container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-        }
+            #container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                text-align: center;
+                overflow-x: hidden;
+                /* Prevent horizontal scroll */
+            }
 
-        #image {
-            height: auto;
-            max-height: 70vh;
+            #image {
+                max-width: 100%;
+                height: auto;
+                max-height: 70vh;
+            }
+
+            #content {
+                padding: 2rem;
+                max-width: 80%;
+                text-align: center;
+            }
         }
 
         #title {
@@ -50,11 +61,41 @@
             font-size: 1.2rem;
             color: #333333;
             line-height: 1.5;
-            padding: 0 1rem;
         }
 
         #bold {
             color: #cb7766ff;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #fefefe;
+                font-family: 'Roboto', sans-serif;
+                color: #333333;
+            }
+
+            #container {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                text-align: left;
+            }
+
+            #image {
+                max-width: 100%;
+                height: auto;
+                max-height: none;
+                margin-right: 2rem;
+            }
+
+            #content {
+                padding: 2rem;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -62,15 +103,18 @@
 <body>
     <div id="container">
         <img id="image" src="townhouse-pixels.png" alt="Townhouse">
-        <h1 id="title">Lizzy and Chris Summer Party</h1>
-        <h2 id="subtitle">June 17, 7pm</h2>
-        <h3 id="address">
-            <bold id="bold">806A</bold> NW 63rd St
-        </h3>
-        <div id="description">
-            <p>We're hosting a party and you're invited! We will have sandwhiches and plenty of alcohol but shoot! Chris
-                broke all of our glasses. Stop at Goodwill on the way over and pickup your drinking chalice for the
-                night. Don't bring anything else! We can't wait to see you.</p>
+        <div id="content">
+            <h1 id="title">Lizzy & Chris Summertime Party</h1>
+            <h2 id="subtitle">Saturday June 17, 7pm</h2>
+            <h3 id="address">
+                <bold id="bold">806A</bold> NW 63rd St
+            </h3>
+            <div id="description">
+                <p>We're hosting a party and you're invited! We will have sandwiches and plenty of beverages but shoot!
+                    Chris broke all of our glasses. Stop at Goodwill on the way over and pickup your drinking chalice
+                    for
+                    the night. Don't bring anything else! We can't wait to see you.</p>
+            </div>
         </div>
     </div>
 </body>
